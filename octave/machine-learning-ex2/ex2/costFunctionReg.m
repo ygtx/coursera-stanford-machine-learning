@@ -22,7 +22,7 @@ h = sigmoid(z);
 
 innerCostFunction11 = - y .* log( h ); % 100 x 1 .* 100 x 1 = 100 x 1
 innerCostFunction12 = - ( ones(m, 1) .- y ) .* log( ones(m ,1) .- h ); % 100 x 1 
-innerCostFunction2 = (lambda / (2 * m)) .* sum(theta .^ 2 );
+innerCostFunction2 = (lambda / (2 * m)) .* sum(theta([2:end], :) .^ 2 );
 
 J = (1 / m) .* sum( innerCostFunction11 .+ innerCostFunction12 ) .+ innerCostFunction2;
 
